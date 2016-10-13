@@ -1,0 +1,10 @@
+{
+    "dependencies": {
+        "youtube-api": "^2.0.4",
+        "bug-killer": "^4.2.2",
+        "lien": "^1.0.1",
+        "opn": "^4.0.1",
+        "pretty-bytes": "^3.0.1",
+        "r-json": "^1.2.2"
+    }
+}
