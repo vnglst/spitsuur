@@ -21,6 +21,8 @@ const Youtube = require('youtube-api'),
 	opn = require('opn'),
 	prettyBytes = require('pretty-bytes')
 
+// Get video file from command line
+const VIDEOPATH = process.argv[2];
 
 // I downloaded the file from OAuth2 -> Download JSON
 const CREDENTIALS = readJson(`${__dirname}/credentials.json`)
@@ -66,8 +68,8 @@ server.addPage('/oauth2callback', lien => {
 			resource: {
 				// Video title and description
 				snippet: {
-					title: 'Testing YoutTube API NodeJS module',
-					description: 'Test video upload via YouTube API'
+					title: VIDEOPATH,
+					description: 'Timelapse van verkeerssituatie in de Randstad.'
 				}
 				// I don't want to spam my subscribers
 				,
@@ -82,7 +84,7 @@ server.addPage('/oauth2callback', lien => {
 			// Create the readable stream to upload the video
 			,
 			media: {
-				body: fs.createReadStream('videos/randstad-16-10-11.mp4')
+				body: fs.createReadStream(VIDEOPATH)
 			}
 		}, (err, data) => {
 			console.log('Done.')
