@@ -11,7 +11,7 @@ do
 done
 echo "Done recording."
 echo "Generating video from jpg files"
-convert -quality 100 *.jpg \
+convert -delay 10 -quality 100 *.jpg \
 		-gravity South -pointsize 80 -annotate +0+100 %f \
 		randstad-$(date +%y-%m-%d_%H-%M-%S).mp4
 VIDEOFILE=$_
