@@ -11,16 +11,5 @@ do
 	screencapture -S -t jpg $(date +%H:%M:%S).jpg
 done
 echo "Done recording screenshots."
-echo "Generating video from jpg files"
-convert -delay 10 -quality 100 *.jpg \
-		-gravity South -pointsize 80 -annotate +0+100 %f \
-		$ROOT/videos/randstad-$(date +%y-%m-%d_%H-%M-%S).mp4
-VIDEOFILE="$_"
-cd $ROOT
-echo "Uploading $VIDEOFILE to YouTube"
-node upload.js $VIDEOFILE
-echo "Moving $VIDEOFILE to uploaded folder"
-cd videos
-mkdir -p uploaded
-mv $VIDEOFILE uploaded
+$ROOT/generate.sh $ROOT
 echo "All done"
