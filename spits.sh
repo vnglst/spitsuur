@@ -1,23 +1,22 @@
 #!/bin/bash
+
+echo "Installing Node dependencies"
+yarn
+
 ROOT=`pwd`
 mkdir -p videos
 DATE=$(date +%Y-%m-%d)
 mkdir -p screenshots/$DATE
 SCREENSHOTS="$_"
+
 # Recording between 4:00 and 20:00
-echo "Loading Google Maps (with traffic) in Safari"
- while [[ "$(date +"%T")" > '04:00:00' ]] && [[ "$(date +"%T")" < '20:00:00' ]]
- do
-
-	# # Randstad large
-	#	open -a safari "https://www.google.nl/maps/@52.1404712,4.9350591,9z/data=!5m1!1e1"
-
-	# # Randstad up close (mobile)
-	open -a safari "https://www.google.nl/maps/@52.1101191,4.7936101,10z/data=!5m1!1e1"
-
-	sleep 60 # 60 seconds
-	screencapture -S -t jpg $ROOT/$SCREENSHOTS/$(date +%H:%M:%S).jpg
- done
+echo "Capturing Google Maps (with traffic)"
+while [[ "$(date +"%T")" > '04:00:00' ]] && [[ "$(date +"%T")" < '20:00:00' ]]
+do
+	node capture.js $ROOT/$SCREENSHOTS/$(date +%H:%M:%S).jpg
+	sleep 5 # 60 seconds
+	echo -ne '#'
+done
 echo "Done recording screenshots."
 
 echo "Generating video from jpg files"
