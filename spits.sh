@@ -8,7 +8,13 @@ SCREENSHOTS="$_"
 echo "Loading Google Maps (with traffic) in Safari"
 # while [[ "$(date +"%T")" > '04:00:00' ]] && [[ "$(date +"%T")" < '20:00:00' ]]
 # do
-	open -a safari "https://www.google.nl/maps/@52.1404712,4.9350591,9z/data=!5m1!1e1"
+
+	# # Randstad large
+	#	open -a safari "https://www.google.nl/maps/@52.1404712,4.9350591,9z/data=!5m1!1e1"
+
+	# # Randstad up close (mobile)
+	open -a safari "https://www.google.nl/maps/@52.1669767,4.809687,11z/data=!5m1!1e1"
+
 	sleep 10 # 60 seconds
 	screencapture -S -t jpg $ROOT/$SCREENSHOTS/$(date +%H:%M:%S).jpg
 # done
