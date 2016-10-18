@@ -14,7 +14,7 @@ echo "Capturing Google Maps (with traffic)"
 while [[ "$(date +"%T")" > '04:00:00' ]] && [[ "$(date +"%T")" < '20:00:00' ]]
 do
 	node capture.js $ROOT/$SCREENSHOTS/$(date +%H:%M:%S).jpg
-	sleep 5 # 60 seconds
+	sleep 60 # 60 seconds
 	echo -ne '#'
 done
 echo "Done recording screenshots."
