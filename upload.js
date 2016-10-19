@@ -74,7 +74,7 @@ server.addPage('/oauth2callback', lien => {
 				}
 				,
 				status: {
-					privacyStatus: 'private'
+					privacyStatus: 'public'
 				}
 			}
 			// This is for the callback function
