@@ -23,6 +23,7 @@ const Youtube = require('youtube-api'),
 
 // Get video file from command line
 const VIDEOPATH = process.argv[2];
+const DATE = process.argv[3];
 
 // I downloaded the file from OAuth2 -> Download JSON
 const CREDENTIALS = readJson(`${__dirname}/credentials.json`)
@@ -68,10 +69,9 @@ server.addPage('/oauth2callback', lien => {
 			resource: {
 				// Video title and description
 				snippet: {
-					title: VIDEOPATH,
-					description: 'Timelapse van verkeerssituatie in de Randstad.'
+					title: 'Timelapse files Randstad (' + DATE + ')',
+					description: 'Timelapse van verkeerssituatie in de Randstad vanaf 5:00 uur in de ochtend tot 20:00 in de avond.'
 				}
-				// I don't want to spam my subscribers
 				,
 				status: {
 					privacyStatus: 'private'
