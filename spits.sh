@@ -11,9 +11,9 @@ SCREENSHOTS="$_"
 
 # Recording between 4:00 and 20:00
 echo "Capturing Google Maps (with traffic)"
-while [[ "$(date +"%T")" > '04:00:00' ]] && [[ "$(date +"%T")" < '20:00:00' ]]
+while [[ "$(date +"%T")" > '04:00:00' ]] && [[ "$(date +"%T")" < '19:00:00' ]]
 do
-	node capture.js $ROOT/$SCREENSHOTS/$(date +%H:%M:%S).jpg
+	node capture.js $ROOT/$SCREENSHOTS/$(date +%H:%M).jpg
 	sleep 60 # 60 seconds
 	echo -ne '#'
 done
