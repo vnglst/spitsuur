@@ -2,15 +2,15 @@
 
 const webshot = require('webshot');
 
-const URL = 'https://www.google.nl/maps/@52.1599098,4.7838344,10.29z/data=!5m1!1e1?force=lite';
+const URL = 'https://www.google.nl/maps/@52.1599098,4.7838344,11.00z/data=!5m1!1e1?force=lite';
 let outputfile = process.argv[2];
 const options = {
 	screenSize: {
-		width: 1280,
-		height: 720
+		width: 640, 	// 1280,
+		height: 1136, 	// 720
 	},
 	shotSize: {
-		width: 1280,
+		width: 640, 	// 1280,
 		height: 'all'
 	},
 	renderDelay: 1000, // milliseconds
