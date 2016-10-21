@@ -5,6 +5,7 @@ yarn
 
 ROOT=`pwd`
 mkdir -p videos
+mkdir -p videos/uploaded
 DATE=$(date +%Y-%m-%d)
 mkdir -p screenshots/$DATE
 SCREENSHOTS="$_"
@@ -30,6 +31,6 @@ echo "Uploading $VIDEOFILE to YouTube"
 node upload.js $ROOT/videos/$VIDEOFILE $DATE
 
 echo "Moving $VIDEOFILE to uploaded folder"
-mv $ROOT/videos/$VIDEOFILE $ROOT/videos/uploaded
+mv $ROOT/videos/$VIDEOFILE $ROOT/videos/uploaded/
 
 echo "All done"
