@@ -27,6 +27,9 @@ convert -delay 20 -quality 100 \
 		$ROOT/videos/randstad-$DATE.mp4
 VIDEOFILE="randstad-$DATE.mp4"
 
+echo "Emailing file"
+echo | mutt -s "Video $DATE" -a $ROOT/videos/$VIDEOFILE -- koen+spits@koenvangilst.nl
+
 echo "Uploading $VIDEOFILE to YouTube"
 node upload.js $ROOT/videos/$VIDEOFILE $DATE
 
