@@ -5,6 +5,7 @@ yarn
 
 ROOT=`pwd`
 mkdir -p videos
+mkdir -p videos/uploaded
 DATE=$(date +%Y-%m-%d)
 mkdir -p screenshots/$DATE
 SCREENSHOTS="$_"
