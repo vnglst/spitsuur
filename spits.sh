@@ -30,6 +30,6 @@ echo "Uploading $VIDEOFILE to YouTube"
 node upload.js $ROOT/videos/$VIDEOFILE $DATE
 
 echo "Moving $VIDEOFILE to uploaded folder"
-mv $ROOT/videos/$VIDEOFILE $ROOT/videos/uploaded
+mv $ROOT/videos/$VIDEOFILE $ROOT/videos/uploaded/
 
 echo "All done"
