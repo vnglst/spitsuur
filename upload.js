@@ -69,7 +69,7 @@ server.addPage('/oauth2callback', lien => {
 			resource: {
 				// Video title and description
 				snippet: {
-					title: 'Timelapse files Randstad (' + DATE + ')',
+					title: 'Timelapse files Randstad (' + DATE + ') (liggend)',
 					description: 'Timelapse van verkeerssituatie in de Randstad vanaf 5:00 uur in de ochtend tot 20:00 in de avond.'
 				}
 				,
