@@ -21,7 +21,7 @@ done
 echo "Done recording screenshots."
 
 echo "Generating video from jpg files"
-convert -delay 20 -quality 80 \
+convert -delay 10 -quality 80 \
 		$ROOT/$SCREENSHOTS/*.jpg \
 		-gravity NorthWest -pointsize 80 -annotate +0+100 %f \
 		$ROOT/videos/randstad-$DATE.mp4
